@@ -1,16 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Hello user!"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            app:menu="@menu/menu_activity_main"
+            app:title="@string/app_name"
+            app:subtitle="v1.0.0-alpha" />
+
+        <AutoCompleteTextView
+            android:id="@+id/text_field"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="8dp"
+            android:background="@drawable/text_field_bg"
+            android:layout_margin="16dp"
+            android:padding="16dp"
+            android:imeOptions="actionGo|actionSearch"
+            android:singleLine="true"
+            android:hint="@string/hint_search" />
+        
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_indicator"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:indeterminate="true"
+            app:trackThickness="2dp"/>
+        
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/icons_recycler_view"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_above="@id/divider" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_above="@id/attribute" />
+
+    <TextView
+        android:id="@+id/attribute"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:text="@string/creator_attribute" />
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/settings_menu_item"
+        android:name="@string/tooltip_settings"
+        android:title="@string/tooltip_settings"
+        android:tooltipText="@string/tooltip_settings"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="always" />
+    
+    <item
+        android:id="@+id/info_menu_item"
+        android:name="@string/tooltip_info"
+        android:title="@string/tooltip_info"
+        android:tooltipText="@string/tooltip_info"
+        android:icon="@drawable/ic_information_outline"
+        app:showAsAction="always" />
+
+</menu>
