@@ -62,10 +62,12 @@ public class MainActivity extends AppCompatActivity {
                 public void afterTextChanged(Editable s) {
                     String input = s.toString().toLowerCase();
                     List<String> matchCases = new ArrayList<>();
-                    for(String iconName : iconNames) {
-                    	if(iconName.contains(input)) {
-                    		matchCases.add(iconName);
-                    	}
+                    if(iconNames != null) {
+                    	for(String iconName : iconNames) {
+                            if(iconName.contains(input)) {
+                                matchCases.add(iconName);
+                            }
+                        }
                     }
                     ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, matchCases);
                     binding.textField.setAdapter(arrayAdapter);
