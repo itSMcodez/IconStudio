@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     if(iconNames != null) {
                     	for(String iconName : iconNames) {
                             if(iconName.contains(input)) {
-                                matchCases.add(iconName);
+                                matchCases.add(iconName.substring(0, iconName.indexOf(".")));
                             }
                         }
                     }
